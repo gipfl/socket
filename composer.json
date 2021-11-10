@@ -19,8 +19,11 @@
     },
     "require": {
         "php": ">=5.6.0",
+        "ext-posix": "*",
+        "ext-sockets": "*",
+        "evenement/evenement": ">=2.0",
+        "gipfl/json": "^0.1.0",
         "react/event-loop": ">=1.0",
-        "react/socket": ">=1.0",
-        "evenement/evenement": ">=2.0"
+        "react/socket": ">=1.0"
     }
 }
