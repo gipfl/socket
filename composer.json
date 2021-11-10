@@ -22,7 +22,7 @@
         "ext-posix": "*",
         "ext-sockets": "*",
         "evenement/evenement": ">=2.0",
-        "gipfl/json": "^0.1.0",
+        "gipfl/json": ">=0.1",
         "react/event-loop": ">=1.0",
         "react/socket": ">=1.0"
     }
