@@ -6,12 +6,23 @@ use gipfl\Json\JsonSerialization;
 
 class UnixSocketPeer implements JsonSerialization
 {
-    public $pid;
-    public $uid;
-    public $gid;
-    public $username;
-    public $fullName;
-    public $groupName;
+    /** @var int */
+    protected $pid;
+
+    /** @var int */
+    protected $uid;
+
+    /** @var int */
+    protected $gid;
+
+    /** @var string */
+    protected $username;
+
+    /** @var ?string */
+    protected $fullName;
+
+    /** @var string */
+    protected $groupName;
 
     public function __construct($pid, $uid, $gid, $username, $fullName, $groupName)
     {
@@ -21,6 +32,54 @@ class UnixSocketPeer implements JsonSerialization
         $this->username = $username;
         $this->fullName = $fullName;
         $this->groupName = $groupName;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPid()
+    {
+        return $this->pid;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGid()
+    {
+        return $this->gid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGroupName()
+    {
+        return $this->groupName;
     }
 
     public static function fromSerialization($any)
