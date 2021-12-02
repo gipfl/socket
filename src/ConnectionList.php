@@ -29,6 +29,7 @@ class ConnectionList extends SplObjectStorage implements EventEmitterInterface
         $this->loop = $loop;
     }
 
+    #[\ReturnTypeWillChange]
     public function attach($object, $info = null)
     {
         if (! $object instanceof ConnectionInterface || $info !== null) {
@@ -45,6 +46,7 @@ class ConnectionList extends SplObjectStorage implements EventEmitterInterface
         $this->emit(self::ON_ATTACHED, [$object]);
     }
 
+    #[\ReturnTypeWillChange]
     public function detach($object)
     {
         parent::detach($object);

@@ -87,6 +87,7 @@ class UnixSocketPeer implements JsonSerialization
         return new static($any->pid, $any->uid, $any->gid, $any->username, $any->fullName, $any->groupName);
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return (object) [
