@@ -74,11 +74,11 @@ class ConnectionList extends SplObjectStorage implements EventEmitterInterface
 
             $connection->on('close', function () use ($deferred, $timer) {
                 $this->loop->cancelTimer($timer);
-                $deferred->resolve();
+                $deferred->resolve(null);
             });
         } else {
             $loop->futureTick(function () use ($deferred) {
-                $deferred->resolve();
+                $deferred->resolve(null);
             });
         }
 
